@@ -1,0 +1,254 @@
+
+*{
+    margin: 0;
+}
+
+body{
+    background: rgba(0,0,0,.5); /*lightgray*/;
+    color:white;
+    font-family: Arial;
+    font-size: 16px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+}
+
+header{
+    border: 5px solid #09f;
+    color:#09f;
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+nav ul{
+    background: #117ED1; /*rgba(0,0,0,.5);*/
+    font-size: 0;
+    padding: 0;
+}
+
+nav ul li{
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    width: 25%;
+}
+
+nav ul li:hover{
+    background: rgba(0,0,0,.3);
+}
+
+nav ul li a{
+    color:white;
+    text-transform: uppercase;
+}
+
+footer{
+    background: #117ED1; /*rgba(0,0,0,.5);*/
+    padding:20px;
+    text-align: center;
+}
+
+#contenedor{
+    background: #EEEEEE;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#slider{
+    padding: 0 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+aside.menu_lateral{
+/*    border: 1px solid white;*/
+    color: black;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 0 10px;
+    vertical-align: top;
+    width: 180px;
+    min-height: 200px;
+}
+
+#webs{
+    background: #EEEEEE;
+    padding: 5px 10px;
+    clear: both;
+    display: inline-block;
+    text-align: center;
+    max-width: 725px;
+    color: #666;
+    /*border:1px solid red;*/
+}
+
+#webs article{
+    background: #ccc;
+    border: 1px solid white;
+    color: black;
+    display: inline-block;
+    margin: /*5px;*/ 0 auto 5px auto;
+    padding: 10px;
+    width: 200px;
+    
+}
+
+#webs article img{
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+}
+
+#webs article:hover img{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+}
+
+.personal, .avatar{
+    float: left;
+}
+
+.avatar{
+    border: 5px solid white;
+    margin-left: 20px;
+}
+
+#webs .formulario{
+    margin: 50px 200px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    -moz-box-shadow: rgb(150,150,150) 3px 3px;
+    -webkit-box-shadow: rgb(150,150,150) 3px 3px;
+    box-shadow: rgb(150,150,150) 3px 3px;
+    text-shadow: rgb(150,150,150) 3px 3px 3px;
+}
+
+.boton{
+    margin-top: 20px;
+}
+
+.ataque{
+    color:red;
+    font-weight: bold;
+}
+
+h1.encabezado{
+    margin: 15px auto;
+}
+
+.catalogos{
+    /*border: 1px solid red;*/
+}
+
+.table_cat{
+    margin: 0 auto 20px auto;
+    text-align: left;
+    width: 80%;
+}
+
+.table_head{
+    background-color: #117ED1;
+    color:white;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+
+.ico{
+    width: 24px;
+    height: 24px;
+}
+
+.opcion{
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+}
+.par{
+    background:#E3E3E3;
+}
+
+.impar{
+    background: #EEEEEE;
+}
+
+.par:hover, .impar:hover{
+    background: #D3DCE3;
+}
+
+.fuente_media{
+    font-size: 10px;
+    color: #212121;
+}
+
+textarea{
+    font-size: 12px;
+}
+
+table td{
+    text-align: left;
+}
+
+/*smartphones*/
+@media screen and (max-width:768px /*480px*/){
+    nav ul li{
+        width: 50%;
+    }
+    header{
+        display: block;
+        text-align: center;
+        width: auto;
+    }
+    aside.menu_lateral, #webs{
+        /*border: 1px solid red;*/
+        display: inline-block;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    aside.menu_lateral ul#nav{
+        margin: 0 auto;
+
+    }
+    .avatar, .personal{
+        float: none;
+    }
+    .avatar{
+        display:inline-block;
+        margin: 10px 0;
+    }
+    #webs .formulario{
+        margin: 0 auto;
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+        -moz-box-shadow: rgb(150,150,150) 3px 3px;
+        -webkit-box-shadow: rgb(150,150,150) 3px 3px;
+        box-shadow: rgb(150,150,150) 3px 3px;
+        text-shadow: rgb(150,150,150) 3px 3px 3px;
+    }
+} 
+
+/*ipad vertical*/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
+    
+}
+
+
