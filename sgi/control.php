@@ -464,4 +464,18 @@ switch ($action){
             echo "No se actualizo el registro. Se detecto codigo malicioso.";
         }
         break;
+        
+    case "eliminarMarca":
+        $aux = new Auxiliar();
+        $id = $aux->setVariableInteger($_POST['idm']);
+        $bd = new Conexion();
+        $sql = "call paMARCAS({$id},'{$marca}','eliminar',@id)";
+        $res = $bd->ejecutar_consulta($sql);
+        if($res){
+            echo "Registro eliminado exitosamente";
+        }else{
+            echo "Error al eliminar el registro. Reintente";
+        }
+        break;
+        break;
 }

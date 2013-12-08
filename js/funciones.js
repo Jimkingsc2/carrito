@@ -406,3 +406,24 @@ function eliminar_cate(id){
         return false;
     }
 }
+
+/**
+ * Elimina una categoria de la base de datos
+ * @param {integer} id
+ * @returns {Boolean}
+ */
+function eliminar_marca(id){
+    if(confirm("Realmente desea eliminar este registro?")){
+        $.ajax({
+            type: "POST",
+            url: "./control.php",
+            data:{action:"eliminarMarca", idm:id},
+            success: function(data) {
+                alert(data);
+                listar_marcas();
+            }
+        });
+    }else{
+        return false;
+    }
+}
