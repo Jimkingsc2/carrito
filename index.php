@@ -32,10 +32,10 @@ $cat = new Categorias();
         <section id="contenedor">
             <nav>
                 <ul>
-                    <li><a href="">MiTienda.com</a></li>
-                    <li><a href="">Novedades</a></li>
-                    <li><a href="">Promociones</a></li>
-                    <li><a href="">Registrate</a></li>
+                    <li><a href="#">MiTienda.com</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Promociones</a></li>
+                    <li><a href="#">Registrate</a></li>
                 </ul>
             </nav>            
             <section id="slider">
