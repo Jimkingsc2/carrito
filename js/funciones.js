@@ -427,3 +427,16 @@ function eliminar_marca(id){
         return false;
     }
 }
+
+
+function llenar_combo_subcategoria(id){
+    $.ajax({
+        type: "POST",
+        url: "./control.php",
+        data:{action:"getComboSubcategorias", idc:id},
+        success: function(data) {
+//            alert(data);
+            $('#combo_subcategoria').html(data);
+        }
+    });
+}

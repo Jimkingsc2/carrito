@@ -227,18 +227,18 @@ switch ($action){
                     </tr>
                     <tr>
                         <td>
-                            <label for="cbbSubCate">Precio de venta</label>
+                            <label for="txtPrecioArticulo">Precio de venta</label>
                         </td>
                         <td>
-                            <input type="text" name="txtNombreArticulo" id="txtNombreArticulo" tabindex="4" onkeypress="next_control(event,4)" />
+                            <input type="text" name="txtPrecioArticulo" id="txtPrecioArticulo" tabindex="4" onkeypress="next_control(event,4)" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="cbbSubCate">Marca</label>
+                            <label for="cbbMarcaArticulo">Marca</label>
                         </td>
                         <td>
-                            <select name="cbbSubCate" id="cbbSubCate">
+                            <select name="cbbMarcaArticulo" id="cbbMarcaArticulo">
                                 <?php
                                         Auxiliar::llenarCombobox("marcas", 'id', 'marca');
                                 ?>
@@ -247,10 +247,10 @@ switch ($action){
                     </tr>
                     <tr>
                         <td>
-                            <label for="cbbSubCate">Categoria</label>
+                            <label for="cbbCatArticulo">Categoria</label>
                         </td>
                         <td>
-                            <select name="cbbSubCate" id="cbbSubCate">
+                            <select name="cbbCatArticulo" id="cbbCatArticulo" onchange="llenar_combo_subcategoria($(this).val())">
                                 <?php
                                         Auxiliar::llenarCombobox("categorias", 'id', 'categoria', 'subcategoria_de IS NULL');
                                 ?>
@@ -261,8 +261,8 @@ switch ($action){
                         <td>
                             <label for="cbbSubCate">SubCategoria</label>
                         </td>
-                        <td>
-                            <select name="cbbSubCate" id="cbbSubCate">
+                        <td id='combo_subcategoria'>
+                            <select name="cbbSubCatArticulo" id="cbbSubCatArticulo">
                                 <?php
                                         Auxiliar::llenarCombobox("categorias", 'id', 'categoria', 'subcategoria_de IS NOT NULL');
                                 ?>
@@ -271,10 +271,10 @@ switch ($action){
                     </tr>
                     <tr>
                         <td>
-                            <label for="cbbSubCate">Imagen</label>
+                            <label for="fileImagen">Imagen</label>
                         </td>
                         <td>
-                            <input type="file" name="imagen" id="imagen" />
+                            <input type="file" name="fileImagen" id="fileImagen" />
                         </td>
                     </tr>
                     <tr>
@@ -477,5 +477,17 @@ switch ($action){
             echo "Error al eliminar el registro. Reintente";
         }
         break;
+        
+        //------------------- A R T I C U L O S ------------------------
+    case "getComboSubcategorias":
+        $aux = new Auxiliar();
+        $id = $aux->setVariableInteger($_POST['idc']);
+        $bd = new Conexion();
+        
+        echo '<select name="cbbSubCatArticulo" id="cbbSubCatArticulo">';
+        echo Auxiliar::getItemsCombobox("categorias", 'id', 'categoria', 'subcategoria_de = '.$id);
+        echo '</select>';
+        
         break;
+        //------------------- A R T I C U L O S ------------------------
 }

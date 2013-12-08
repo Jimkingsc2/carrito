@@ -233,4 +233,34 @@ class Auxiliar{
             }
         }
     }
+    
+    /**
+     * Llena un control combobox con los datos almacenados en un catalogo
+     * @param string $table Nombre de la tabla de la que se desea extraer la informacion
+     * @param string $id Nombre del campo que representa la llave primaria del catalogo
+     * @param string $value Nombre del campo que describe al catalogo
+     * @param string $where Condicion para filtrar los resultados de la consulta
+     */
+    public static function getItemsCombobox($table, $id, $value, $where=null)
+    {
+        $con = new Conexion();
+        $items = "";
+        $items .= "<option value='0'>Seleccione</option>";
+        if(is_null($where)){
+            $res = $con->ejecutar_consulta("select {$id},{$value} from {$table} order by {$value} asc");
+            if($res){
+                while($rows = $con->devolver_array($res)){
+                    $items .= "<option value='{$rows[$id]}'>{$rows[$value]}</option>";
+                }
+            }
+        }else{
+             $res = $con->ejecutar_consulta("select {$id},{$value} from {$table} where $where order by {$value} asc");
+            if($res){
+                while($rows = $con->devolver_array($res)){
+                    $items .= "<option value='{$rows[$id]}'>{$rows[$value]}</option>";
+                }
+            }
+        }
+        return $items;
+    }
 }
