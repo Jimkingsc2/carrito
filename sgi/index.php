@@ -20,6 +20,7 @@ $cat = new Categorias();
         <script type="text/javascript" src="../js/jquery.bxslider.js"></script>
         <script type="text/javascript" src="../js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="../js/funciones.js"></script>
+        <script type="text/javascript" src="../js/AjaxUpload.2.0.min.js"></script>
         <link rel="stylesheet" href="../css/estilo.css" />
         <link rel="stylesheet" href="../css/menu.css" type="text/css" media="screen">
         

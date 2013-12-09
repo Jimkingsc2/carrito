@@ -235,7 +235,7 @@ class Auxiliar{
     }
     
     /**
-     * Llena un control combobox con los datos almacenados en un catalogo
+     * Regresa una cadena con los items resultantes de una consulta a un catalogo en la base de datos
      * @param string $table Nombre de la tabla de la que se desea extraer la informacion
      * @param string $id Nombre del campo que representa la llave primaria del catalogo
      * @param string $value Nombre del campo que describe al catalogo

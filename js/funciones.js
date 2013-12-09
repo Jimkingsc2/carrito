@@ -365,6 +365,14 @@ function guardar_marca(){
         }
     }
 }
+
+function guardar_articulo()
+{
+    $("#formArticulo").attr("action", "./control.php");
+    $("#action").val('subirImagenArticulo')
+    $("#formArticulo").submit();
+}
+
 /**
  * Elimina un administrador de la base de datos
  * @param {integer} id
@@ -435,8 +443,40 @@ function llenar_combo_subcategoria(id){
         url: "./control.php",
         data:{action:"getComboSubcategorias", idc:id},
         success: function(data) {
-//            alert(data);
             $('#combo_subcategoria').html(data);
         }
     });
+}
+ 
+
+function subir(){
+
+var button = $('#btnUpload'), interval;
+    alert(button);
+    return;
+    new AjaxUpload('#btnUpload', {
+        action: './control.php?action="subirImagenArticulo"',
+        onSubmit : function(file , ext){
+        if (! (ext && /^(jpg|png)$/.test(ext))){
+            // extensiones permitidas
+            alert('Error: Solo se permiten imagenes');
+            // cancela upload
+            return false;
+        } else {
+                       //Cambio el texto del boton y lo deshabilito
+            //button.text('Uploading');
+            this.disable();
+        }
+        },
+        onComplete: function(file, response){
+            //button.text('Upload');
+            // habilito upload button 
+            this.enable();          
+            // Agrega archivo a la lista
+            alert("Subido");
+            //document.getElementById('img').value=file;
+        }   
+    });
+
+
 }

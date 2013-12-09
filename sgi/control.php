@@ -199,7 +199,7 @@ switch ($action){
         ?>
         <h2>Catalogo Articulos</h2>
         <article class="formulario" style="width: auto;">
-            <form name="frmArticulos" id="frmArticulos" enctype="multipart/form-data">
+            <form name="frmArticulos" id="frmArticulos" enctype="multipart/form-data" method="post">
                 <table>
                     <tr>
                         <td>
@@ -275,19 +275,21 @@ switch ($action){
                         </td>
                         <td>
                             <input type="file" name="fileImagen" id="fileImagen" />
+                            
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" class="right">
                             <input type="hidden" name="txtAccionCate" id="txtAccionCate" value="" />
+                            <input type="hidden" name="action" id="action" value="" />
                             <input type="reset" name="btnResetCate" id="btnResetCate" value="Limpiar" />
-                            <input type="button" class="boton" name="btnCate" id="btnCate" value="Guardar" onclick="guardar_categoria()" />
+                            <input type="button" class="boton" name="btnArticulo" id="btnArticulo" value="Guardar" onclick="guardar_articulo()" />
                         </td>
                     </tr>
                 </table>
             </form>
         </article>
-        <div id="catalogo_cate">
+        <div id="catalogo_articulos">
             
         </div>
         <?php
@@ -488,6 +490,21 @@ switch ($action){
         echo Auxiliar::getItemsCombobox("categorias", 'id', 'categoria', 'subcategoria_de = '.$id);
         echo '</select>';
         
+        break;
+    
+    case "subirImagenArticulo":
+        echo "procesando...";
+        exit;
+        $uploaddir = './img/';
+        // defino el nombre del archivo
+        $uploadfile = $uploaddir . basename($_FILES['fileImagen']['name']);
+
+        // Lo mueve a la carpeta elegida
+        if (move_uploaded_file($_FILES['fileImagen']['tmp_name'], $uploadfile)) {
+                echo "success";
+        } else {
+                echo " error";
+        }
         break;
         //------------------- A R T I C U L O S ------------------------
 }
